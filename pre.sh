@@ -20,6 +20,7 @@ declare -a robots=(
   "g1"
   "orca"
   "gr1t2"
+  "grmini1t2"
 )
 
 declare -A paths
@@ -28,6 +29,7 @@ paths["h1_2"]="H1_2/urdf"
 paths["g1"]="G1/urdf"
 paths["orca"]="Orca/urdf"
 paths["gr1t2"]="GR1T2/urdf"
+paths["grmini1t2"]="GRMini1T2/urdf"
 
 for robot in "${robots[@]}"; do
   python scripts/make_srdf.py -name "$robot" -path "robot/""${paths[$robot]}"
