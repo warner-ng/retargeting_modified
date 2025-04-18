@@ -6,5 +6,6 @@ __pycache__
 *test*
 
 # 显式允许 _dataset 文件或目录
-!_dataset
-!/_dataset/
+!full_dataset.py
+!nba_dataset.py
+!pacer_dataset.py
