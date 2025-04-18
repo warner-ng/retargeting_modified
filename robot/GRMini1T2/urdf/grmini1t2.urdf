@@ -1578,6 +1578,9 @@
                 xyz="0 0 0"/>
     </joint>
     
+
+
+    
   <!-- Keyframe -->
   <link name="keyframe_head">
     <!-- <visual>
@@ -1686,13 +1689,13 @@
     <child link="keyframe_left_elbow"/>
   </joint>
   
-  <!-- <link name="keyframe_right_elbow">
-    <visual>
+  <link name="keyframe_right_elbow">
+    <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <sphere radius="0.05"/>
       </geometry>
-    </visual>
+    </visual> -->
   </link>
   <joint name="keyframe_elbow_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -1700,12 +1703,12 @@
     <child link="keyframe_right_elbow"/>
   </joint>
   <link name="keyframe_left_wrist">
-    <visual>
+    <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <sphere radius="0.05"/>
       </geometry>
-    </visual>
+    </visual> -->
   </link>
   <joint name="keyframe_left_wrist_joint" type="fixed">
     <origin xyz="0 0 -0.1" rpy="0 0 0"/>
@@ -1713,18 +1716,18 @@
     <child link="keyframe_left_wrist"/>
   </joint>
   <link name="keyframe_right_wrist">
-    <visual>
+    <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <sphere radius="0.05"/>
       </geometry>
-    </visual>
+    </visual> -->
   </link>
   <joint name="keyframe_right_wrist_joint" type="fixed">
     <origin xyz="0 0 -0.1" rpy="0 0 0"/>
     <parent link="right_hand_pitch"/>
     <child link="keyframe_right_wrist"/>
-  </joint> -->
+  </joint>
 
   <link name="keyframe_left_hip">
     <!-- <visual>
