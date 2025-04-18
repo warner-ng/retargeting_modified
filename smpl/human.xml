@@ -1,0 +1,218 @@
+<mujoco model="humanoid">
+  <compiler coordinate="local"/>
+  <statistic extent="2" center="0 0 1"/>
+  <option timestep="0.00555"/>
+  <default>
+    <motor ctrlrange="-1 1" ctrllimited="true"/>
+    <geom type="capsule" condim="1" friction="1.0 0.05 0.05" solimp=".9 .99 .003" solref=".015 1"/>
+    <joint type="hinge" damping="0.1" stiffness="5" armature=".007" limited="true" solimplimit="0 .99 .01"/>
+    <site size=".04" group="3"/>
+    <default class="force-torque">
+      <site type="box" size=".01 .01 .02" rgba="1 0 0 1"/>
+    </default>
+    <default class="touch">
+      <site type="capsule" rgba="0 0 1 .3"/>
+    </default>
+  </default>
+  <worldbody>
+    <light cutoff="100" diffuse="1 1 1" dir="-0 0 -1.3" directional="true" exponent="1" pos="0 0 1.3" specular=".1 .1 .1"/>
+    <geom conaffinity="1" condim="3" name="floor" pos="0 0 0" rgba="0.8 0.9 0.8 1" size="100 100 .2" type="plane" material="MatPlane"/>
+    <body name="Pelvis" pos="-0.0018 -0.2233 0.0282">
+      <freejoint name="Pelvis"/>
+      <geom type="sphere" contype="1" conaffinity="1" density="4629.6296296296305" size="0.0942" pos="0.0000 0.0000 0.0000"/>
+      <body name="r_hip" pos="-0.0068 0.0695 -0.0914">
+        <joint name="r_hip_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="800" damping="80" armature="0.02" range="-90.0000 90.0000"/>
+        <joint name="r_hip_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="800" damping="80" armature="0.02" range="-90.0000 90.0000"/>
+        <joint name="r_hip_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="800" damping="80" armature="0.02" range="-90.0000 90.0000"/>
+        <geom type="capsule" contype="1" conaffinity="1" density="2040.816327" fromto="-0.0009 0.0069 -0.0750 -0.0036 0.0274 -0.3002" size="0.0615"/>
+        <body name="r_knee" pos="-0.0045 0.0343 -0.3752">
+          <joint name="r_knee_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="800" damping="80" armature="0.02" range="-5.6250 5.6250"/>
+          <joint name="r_knee_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="800" damping="80" armature="0.02" range="0.0000 180.0000"/>
+          <joint name="r_knee_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="800" damping="80" armature="0.02" range="-5.6250 5.6250"/>
+          <geom type="capsule" contype="1" conaffinity="1" density="1234.567901" fromto="-0.0087 -0.0027 -0.0796 -0.0350 -0.0109 -0.3184" size="0.0541"/>
+          <body name="r_ankle" pos="-0.0437 -0.0136 -0.398">
+            <joint name="r_ankle_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="800" damping="80" armature="0.02" range="-45.0000 45.0000"/>
+            <joint name="r_ankle_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="800" damping="80" armature="0.02" range="-90.0000 90.0000"/>
+            <joint name="r_ankle_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="800" damping="80" armature="0.02" range="-45.0000 45.0000"/>
+            <geom type="box" pos="0.0242 0.0233 -0.0239" size="0.085 0.0483 0.0464" quat="1.0000 0.0000 0.0000 0.0000" density="1000"/>
+            <body name="r_foot" pos="0.1193 0.0264 -0.0558">
+              <joint name="r_foot_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="500" damping="50" armature="0.02" range="-180.0000 180.0000"/>
+              <joint name="r_foot_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="500" damping="50" armature="0.02" range="-180.0000 180.0000"/>
+              <joint name="r_foot_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="500" damping="50" armature="0.02" range="-180.0000 180.0000"/>
+              <geom type="box" pos="0.0248 -0.0030 0.0055" size="0.0496 0.0478 0.02" quat="1.0000 0.0000 0.0000 0.0000" density="1000"/>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="l_hip" pos="-0.0043 -0.0677 -0.0905">
+        <joint name="l_hip_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="800" damping="80" armature="0.02" range="-90.0000 90.0000"/>
+        <joint name="l_hip_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="800" damping="80" armature="0.02" range="-90.0000 90.0000"/>
+        <joint name="l_hip_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="800" damping="80" armature="0.02" range="-90.0000 90.0000"/>
+        <geom type="capsule" contype="1" conaffinity="1" density="2040.816327" fromto="-0.0018 -0.0077 -0.0765 -0.0071 -0.0306 -0.3061" size="0.0606"/>
+        <body name="l_knee" pos="-0.0089 -0.0383 -0.3826">
+          <joint name="l_knee_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="800" damping="80" armature="0.02" range="-5.6250 5.6250"/>
+          <joint name="l_knee_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="800" damping="80" armature="0.02" range="0.0000 180.0000"/>
+          <joint name="l_knee_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="800" damping="80" armature="0.02" range="-5.6250 5.6250"/>
+          <geom type="capsule" contype="1" conaffinity="1" density="1234.567901" fromto="-0.0085 0.0032 -0.0797 -0.0338 0.0126 -0.3187" size="0.0541"/>
+          <body name="l_ankle" pos="-0.0423 0.0158 -0.3984">
+            <joint name="l_ankle_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="800" damping="80" armature="0.02" range="-45.0000 45.0000"/>
+            <joint name="l_ankle_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="800" damping="80" armature="0.02" range="-90.0000 90.0000"/>
+            <joint name="l_ankle_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="800" damping="80" armature="0.02" range="-45.0000 45.0000"/>
+            <geom type="box" pos="0.0256 -0.0212 -0.0174" size="0.0865 0.0483 0.0478" quat="1.0000 0.0000 0.0000 0.0000" density="1000"/>
+            <body name="l_foot" pos="0.1233 -0.0254 -0.0481">
+              <joint name="l_foot_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="500" damping="50" armature="0.02" range="-180.0000 180.0000"/>
+              <joint name="l_foot_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="500" damping="50" armature="0.02" range="-180.0000 180.0000"/>
+              <joint name="l_foot_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="500" damping="50" armature="0.02" range="-180.0000 180.0000"/>
+              <geom type="box" pos="0.0227 0.0042 0.0045" size="0.0493 0.0479 0.0216" quat="1.0000 0.0000 0.0000 0.0000" density="1000"/>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="spine1" pos="-0.0267 -0.0025 0.109">
+        <joint name="spine1_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="1000" damping="100" armature="0.02" range="-60.0000 60.0000"/>
+        <joint name="spine1_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="1000" damping="100" armature="0.02" range="-60.0000 60.0000"/>
+        <joint name="spine1_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="1000" damping="100" armature="0.02" range="-60.0000 60.0000"/>
+        <geom type="capsule" contype="1" conaffinity="1" density="2040.816327" fromto="0.0005 0.0025 0.0608 0.0006 0.0030 0.0743" size="0.0769"/>
+        <body name="spine2" pos="0.0011 0.0055 0.1352">
+          <joint name="spine2_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="1000" damping="100" armature="0.02" range="-60.0000 60.0000"/>
+          <joint name="spine2_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="1000" damping="100" armature="0.02" range="-60.0000 60.0000"/>
+          <joint name="spine2_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="1000" damping="100" armature="0.02" range="-60.0000 60.0000"/>
+          <geom type="capsule" contype="1" conaffinity="1" density="2040.816327" fromto="0.0114 0.0007 0.0238 0.0140 0.0008 0.0291" size="0.0755"/>
+          <body name="spine3" pos="0.0254 0.0015 0.0529">
+            <joint name="spine3_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="1000" damping="100" armature="0.02" range="-60.0000 60.0000"/>
+            <joint name="spine3_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="1000" damping="100" armature="0.02" range="-60.0000 60.0000"/>
+            <joint name="spine3_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="1000" damping="100" armature="0.02" range="-60.0000 60.0000"/>
+            <geom type="capsule" contype="1" conaffinity="1" density="2040.816327" fromto="-0.0173 -0.0009 0.0682 -0.0212 -0.0010 0.0833" size="0.1002"/>
+            <body name="neck" pos="-0.0429 -0.0028 0.2139">
+              <joint name="neck_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="500" damping="50" armature="0.02" range="-5.6250 5.6250"/>
+              <joint name="neck_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="500" damping="50" armature="0.02" range="-90.0000 90.0000"/>
+              <joint name="neck_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="500" damping="50" armature="0.02" range="-90.0000 90.0000"/>
+              <geom type="capsule" contype="1" conaffinity="1" density="1000" fromto="0.0103 0.0010 0.0130 0.0411 0.0041 0.0520" size="0.0436"/>
+              <body name="head" pos="0.0513 0.0052 0.065">
+                <joint name="head_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="500" damping="50" armature="0.02" range="-5.6250 5.6250"/>
+                <joint name="head_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="500" damping="50" armature="0.02" range="-90.0000 90.0000"/>
+                <joint name="head_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="500" damping="50" armature="0.02" range="-90.0000 90.0000"/>
+                <geom type="sphere" contype="1" conaffinity="1" density="1000" size="0.1011" pos="0.0000 0.0000 0.0000"/>
+              </body>
+            </body>
+            <body name="r_collar" pos="-0.0341 0.0788 0.1217">
+              <joint name="r_collar_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="500" damping="50" armature="0.02" range="-5.6250 5.6250"/>
+              <joint name="r_collar_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="500" damping="50" armature="0.02" range="-5.6250 5.6250"/>
+              <joint name="r_collar_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="500" damping="50" armature="0.02" range="-5.6250 5.6250"/>
+              <geom type="capsule" contype="1" conaffinity="1" density="1000" fromto="-0.0018 0.0182 0.0061 -0.0071 0.0728 0.0244" size="0.0521"/>
+              <body name="r_shoulder" pos="-0.0089 0.091 0.0305">
+                <joint name="r_shoulder_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="500" damping="50" armature="0.02" range="-720.0000 720.0000"/>
+                <joint name="r_shoulder_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="500" damping="50" armature="0.02" range="-720.0000 720.0000"/>
+                <joint name="r_shoulder_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="500" damping="50" armature="0.02" range="-720.0000 720.0000"/>
+                <geom type="capsule" contype="1" conaffinity="1" density="1000" fromto="-0.0055 0.0519 -0.0026 -0.0220 0.2077 -0.0102" size="0.0517"/>
+                <body name="r_elbow" pos="-0.0275 0.2596 -0.0128">
+                  <joint name="r_elbow_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="500" damping="50" armature="0.02" range="-5.6250 5.6250"/>
+                  <joint name="r_elbow_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="500" damping="50" armature="0.02" range="-5.6250 5.6250"/>
+                  <joint name="r_elbow_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="500" damping="50" armature="0.02" range="-180.0000 0.0000"/>
+                  <geom type="capsule" contype="1" conaffinity="1" density="1000" fromto="-0.0002 0.0498 0.0018 -0.0009 0.1994 0.0072" size="0.0405"/>
+                  <body name="r_wrist" pos="-0.0012 0.2492 0.009">
+                    <joint name="r_wrist_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="300" damping="30" armature="0.02" range="-180.0000 180.0000"/>
+                    <joint name="r_wrist_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="300" damping="30" armature="0.02" range="-180.0000 180.0000"/>
+                    <joint name="r_wrist_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="300" damping="30" armature="0.02" range="-180.0000 180.0000"/>
+                    <geom type="capsule" contype="1" conaffinity="1" density="1000" fromto="-0.0030 0.0168 -0.0016 -0.0120 0.0672 -0.0065" size="0.0318"/>
+                  </body>
+                </body>
+              </body>
+            </body>
+            <body name="l_collar" pos="-0.0386 -0.0818 0.1188">
+              <joint name="l_collar_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="500" damping="50" armature="0.02" range="-5.6250 5.6250"/>
+              <joint name="l_collar_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="500" damping="50" armature="0.02" range="-5.6250 5.6250"/>
+              <joint name="l_collar_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="500" damping="50" armature="0.02" range="-5.6250 5.6250"/>
+              <geom type="capsule" contype="1" conaffinity="1" density="1000" fromto="-0.0018 -0.0192 0.0065 -0.0073 -0.0768 0.0260" size="0.0511"/>
+              <body name="l_shoulder" pos="-0.0091 -0.096 0.0326">
+                <joint name="l_shoulder_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="500" damping="50" armature="0.02" range="-720.0000 720.0000"/>
+                <joint name="l_shoulder_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="500" damping="50" armature="0.02" range="-720.0000 720.0000"/>
+                <joint name="l_shoulder_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="500" damping="50" armature="0.02" range="-720.0000 720.0000"/>
+                <geom type="capsule" contype="1" conaffinity="1" density="1000" fromto="-0.0043 -0.0507 -0.0027 -0.0171 -0.2030 -0.0107" size="0.0531"/>
+                <body name="l_elbow" pos="-0.0214 -0.2537 -0.0133">
+                  <joint name="l_elbow_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="500" damping="50" armature="0.02" range="-5.6250 5.6250"/>
+                  <joint name="l_elbow_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="500" damping="50" armature="0.02" range="-5.6250 5.6250"/>
+                  <joint name="l_elbow_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="500" damping="50" armature="0.02" range="0.0000 180.0000"/>
+                  <geom type="capsule" contype="1" conaffinity="1" density="1000" fromto="-0.0011 -0.0511 0.0016 -0.0044 -0.2042 0.0062" size="0.0408"/>
+                  <body name="l_wrist" pos="-0.0056 -0.2553 0.0078">
+                    <joint name="l_wrist_x" type="hinge" pos="0 0 0" axis="1 0 0" stiffness="300" damping="30" armature="0.02" range="-180.0000 180.0000"/>
+                    <joint name="l_wrist_y" type="hinge" pos="0 0 0" axis="0 1 0" stiffness="300" damping="30" armature="0.02" range="-180.0000 180.0000"/>
+                    <joint name="l_wrist_z" type="hinge" pos="0 0 0" axis="0 0 1" stiffness="300" damping="30" armature="0.02" range="-180.0000 180.0000"/>
+                    <geom type="capsule" contype="1" conaffinity="1" density="1000" fromto="-0.0021 -0.0169 -0.0012 -0.0083 -0.0677 -0.0049" size="0.0326"/>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="r_hip_x" joint="r_hip_x" gear="500"/>
+    <motor name="r_hip_y" joint="r_hip_y" gear="500"/>
+    <motor name="r_hip_z" joint="r_hip_z" gear="500"/>
+    <motor name="r_knee_x" joint="r_knee_x" gear="500"/>
+    <motor name="r_knee_y" joint="r_knee_y" gear="500"/>
+    <motor name="r_knee_z" joint="r_knee_z" gear="500"/>
+    <motor name="r_ankle_x" joint="r_ankle_x" gear="500"/>
+    <motor name="r_ankle_y" joint="r_ankle_y" gear="500"/>
+    <motor name="r_ankle_z" joint="r_ankle_z" gear="500"/>
+    <motor name="r_foot_x" joint="r_foot_x" gear="500"/>
+    <motor name="r_foot_y" joint="r_foot_y" gear="500"/>
+    <motor name="r_foot_z" joint="r_foot_z" gear="500"/>
+    <motor name="l_hip_x" joint="l_hip_x" gear="500"/>
+    <motor name="l_hip_y" joint="l_hip_y" gear="500"/>
+    <motor name="l_hip_z" joint="l_hip_z" gear="500"/>
+    <motor name="l_knee_x" joint="l_knee_x" gear="500"/>
+    <motor name="l_knee_y" joint="l_knee_y" gear="500"/>
+    <motor name="l_knee_z" joint="l_knee_z" gear="500"/>
+    <motor name="l_ankle_x" joint="l_ankle_x" gear="500"/>
+    <motor name="l_ankle_y" joint="l_ankle_y" gear="500"/>
+    <motor name="l_ankle_z" joint="l_ankle_z" gear="500"/>
+    <motor name="l_foot_x" joint="l_foot_x" gear="500"/>
+    <motor name="l_foot_y" joint="l_foot_y" gear="500"/>
+    <motor name="l_foot_z" joint="l_foot_z" gear="500"/>
+    <motor name="spine1_x" joint="spine1_x" gear="500"/>
+    <motor name="spine1_y" joint="spine1_y" gear="500"/>
+    <motor name="spine1_z" joint="spine1_z" gear="500"/>
+    <motor name="spine2_x" joint="spine2_x" gear="500"/>
+    <motor name="spine2_y" joint="spine2_y" gear="500"/>
+    <motor name="spine2_z" joint="spine2_z" gear="500"/>
+    <motor name="spine3_x" joint="spine3_x" gear="500"/>
+    <motor name="spine3_y" joint="spine3_y" gear="500"/>
+    <motor name="spine3_z" joint="spine3_z" gear="500"/>
+    <motor name="neck_x" joint="neck_x" gear="500"/>
+    <motor name="neck_y" joint="neck_y" gear="500"/>
+    <motor name="neck_z" joint="neck_z" gear="500"/>
+    <motor name="head_x" joint="head_x" gear="500"/>
+    <motor name="head_y" joint="head_y" gear="500"/>
+    <motor name="head_z" joint="head_z" gear="500"/>
+    <motor name="r_collar_x" joint="r_collar_x" gear="500"/>
+    <motor name="r_collar_y" joint="r_collar_y" gear="500"/>
+    <motor name="r_collar_z" joint="r_collar_z" gear="500"/>
+    <motor name="r_shoulder_x" joint="r_shoulder_x" gear="500"/>
+    <motor name="r_shoulder_y" joint="r_shoulder_y" gear="500"/>
+    <motor name="r_shoulder_z" joint="r_shoulder_z" gear="500"/>
+    <motor name="r_elbow_x" joint="r_elbow_x" gear="500"/>
+    <motor name="r_elbow_y" joint="r_elbow_y" gear="500"/>
+    <motor name="r_elbow_z" joint="r_elbow_z" gear="500"/>
+    <motor name="r_wrist_x" joint="r_wrist_x" gear="500"/>
+    <motor name="r_wrist_y" joint="r_wrist_y" gear="500"/>
+    <motor name="r_wrist_z" joint="r_wrist_z" gear="500"/>
+    <motor name="l_collar_x" joint="l_collar_x" gear="500"/>
+    <motor name="l_collar_y" joint="l_collar_y" gear="500"/>
+    <motor name="l_collar_z" joint="l_collar_z" gear="500"/>
+    <motor name="l_shoulder_x" joint="l_shoulder_x" gear="500"/>
+    <motor name="l_shoulder_y" joint="l_shoulder_y" gear="500"/>
+    <motor name="l_shoulder_z" joint="l_shoulder_z" gear="500"/>
+    <motor name="l_elbow_x" joint="l_elbow_x" gear="500"/>
+    <motor name="l_elbow_y" joint="l_elbow_y" gear="500"/>
+    <motor name="l_elbow_z" joint="l_elbow_z" gear="500"/>
+    <motor name="l_wrist_x" joint="l_wrist_x" gear="500"/>
+    <motor name="l_wrist_y" joint="l_wrist_y" gear="500"/>
+    <motor name="l_wrist_z" joint="l_wrist_z" gear="500"/>
+  </actuator>
+  <contact/>
+  <size njmax="700" nconmax="700"/>
+</mujoco>

@@ -1,0 +1,13 @@
+joblib
+numpy
+torch
+torchaudio
+torchvision
+tqdm
+meshcat
+qpsolvers[open_source_solvers]
+PyYAML
+tqdm
+pybullet
+loop-rate-limiters
+urdf_parser_py

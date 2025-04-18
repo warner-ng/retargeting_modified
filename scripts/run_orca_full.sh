@@ -1,0 +1,10 @@
+python src/main.py \
+    -path robot/Orca \
+    -urdf urdf/orca.urdf \
+    -srdf urdf/orca.srdf \
+    -pkg robot/ \
+    -yaml config/orca.yml \
+    -smpl smpl \
+    -data smpl_data/amass_full_test.pkl \
+    -output output/orca_data/full_test \
+    -rate 30 -print_joints

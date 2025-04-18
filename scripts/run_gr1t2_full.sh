@@ -1,0 +1,10 @@
+python src/main.py \
+    -path robot/GR1T2 \
+    -urdf urdf/gr1t2.urdf \
+    -srdf urdf/gr1t2.srdf \
+    -pkg robot/ \
+    -yaml config/gr1t2.yml \
+    -smpl smpl \
+    -data smpl_data/amass_full_test.pkl \
+    -output output/gr1t2_data/full_test \
+    -rate 30 -print_joints

@@ -1,0 +1,10 @@
+python src/main.py \
+    -path robot/H1 \
+    -urdf urdf/h1.urdf \
+    -srdf urdf/h1.srdf \
+    -pkg robot/ \
+    -yaml config/h1.yml \
+    -smpl smpl \
+    -data smpl_data/amass_full_test.pkl \
+    -output output/h1_data/full_test \
+    -rate 30 -print_joints

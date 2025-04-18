@@ -1,0 +1,91 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF. 
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined. -->
+<robot name="gr1t2">
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. 
+    This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="l_thigh_yaw" link2="l_thigh_pitch" reason="Adjacent"/>
+    <disable_collisions link1="l_thigh_pitch" link2="l_shank_pitch" reason="Adjacent"/>
+    <disable_collisions link1="r_thigh_yaw" link2="r_thigh_pitch" reason="Adjacent"/>
+    <disable_collisions link1="r_thigh_pitch" link2="r_shank_pitch" reason="Adjacent"/>
+    <disable_collisions link1="base" link2="waist_yaw" reason="Adjacent"/>
+    <disable_collisions link1="l_upper_arm_roll" link2="l_upper_arm_yaw" reason="Adjacent"/>
+    <disable_collisions link1="r_upper_arm_roll" link2="r_upper_arm_yaw" reason="Adjacent"/>
+
+    <disable_collisions link1="l_hand_pitch" link2="base" reason="Never"/>
+    <disable_collisions link1="l_hand_pitch" link2="l_thigh_yaw" reason="Never"/>
+    <disable_collisions link1="l_hand_pitch" link2="l_thigh_pitch" reason="Never"/>
+    <disable_collisions link1="l_hand_pitch" link2="l_shank_pitch" reason="Never"/>
+    <disable_collisions link1="l_hand_pitch" link2="l_foot_roll" reason="Never"/>
+    <disable_collisions link1="l_hand_pitch" link2="r_thigh_yaw" reason="Never"/>
+    <disable_collisions link1="l_hand_pitch" link2="r_thigh_pitch" reason="Never"/>
+    <disable_collisions link1="l_hand_pitch" link2="r_shank_pitch" reason="Never"/>
+    <disable_collisions link1="l_hand_pitch" link2="r_foot_roll" reason="Never"/>
+    <disable_collisions link1="l_hand_pitch" link2="waist_yaw" reason="Never"/>
+    <disable_collisions link1="l_hand_pitch" link2="head_yaw" reason="Never"/>
+    <disable_collisions link1="l_hand_pitch" link2="torso" reason="Never"/>
+    <disable_collisions link1="l_hand_pitch" link2="l_upper_arm_roll" reason="Never"/>
+    <disable_collisions link1="l_hand_pitch" link2="l_upper_arm_yaw" reason="Never"/>
+    <disable_collisions link1="l_hand_pitch" link2="l_hand_yaw" reason="Never"/>
+    <disable_collisions link1="l_hand_pitch" link2="l_hand_pitch" reason="Never"/>
+    <disable_collisions link1="l_hand_pitch" link2="r_upper_arm_roll" reason="Never"/>
+    <disable_collisions link1="l_hand_pitch" link2="r_upper_arm_yaw" reason="Never"/>
+    <disable_collisions link1="l_hand_pitch" link2="r_hand_yaw" reason="Never"/>
+    <disable_collisions link1="l_hand_pitch" link2="r_hand_pitch" reason="Never"/>
+    <disable_collisions link1="r_hand_pitch" link2="base" reason="Never"/>
+    <disable_collisions link1="r_hand_pitch" link2="l_thigh_yaw" reason="Never"/>
+    <disable_collisions link1="r_hand_pitch" link2="l_thigh_pitch" reason="Never"/>
+    <disable_collisions link1="r_hand_pitch" link2="l_shank_pitch" reason="Never"/>
+    <disable_collisions link1="r_hand_pitch" link2="l_foot_roll" reason="Never"/>
+    <disable_collisions link1="r_hand_pitch" link2="r_thigh_yaw" reason="Never"/>
+    <disable_collisions link1="r_hand_pitch" link2="r_thigh_pitch" reason="Never"/>
+    <disable_collisions link1="r_hand_pitch" link2="r_shank_pitch" reason="Never"/>
+    <disable_collisions link1="r_hand_pitch" link2="r_foot_roll" reason="Never"/>
+    <disable_collisions link1="r_hand_pitch" link2="waist_yaw" reason="Never"/>
+    <disable_collisions link1="r_hand_pitch" link2="head_yaw" reason="Never"/>
+    <disable_collisions link1="r_hand_pitch" link2="torso" reason="Never"/>
+    <disable_collisions link1="r_hand_pitch" link2="l_upper_arm_roll" reason="Never"/>
+    <disable_collisions link1="r_hand_pitch" link2="l_upper_arm_yaw" reason="Never"/>
+    <disable_collisions link1="r_hand_pitch" link2="l_hand_yaw" reason="Never"/>
+    <disable_collisions link1="r_hand_pitch" link2="r_upper_arm_roll" reason="Never"/>
+    <disable_collisions link1="r_hand_pitch" link2="r_upper_arm_yaw" reason="Never"/>
+    <disable_collisions link1="r_hand_pitch" link2="r_hand_yaw" reason="Never"/>
+    <disable_collisions link1="r_hand_pitch" link2="r_hand_pitch" reason="Never"/>
+    <disable_collisions link1="l_foot_roll" link2="base" reason="Never"/>
+    <disable_collisions link1="l_foot_roll" link2="l_thigh_yaw" reason="Never"/>
+    <disable_collisions link1="l_foot_roll" link2="l_thigh_pitch" reason="Never"/>
+    <disable_collisions link1="l_foot_roll" link2="l_shank_pitch" reason="Never"/>
+    <disable_collisions link1="l_foot_roll" link2="l_foot_roll" reason="Never"/>
+    <disable_collisions link1="l_foot_roll" link2="r_thigh_yaw" reason="Never"/>
+    <disable_collisions link1="l_foot_roll" link2="r_thigh_pitch" reason="Never"/>
+    <disable_collisions link1="l_foot_roll" link2="r_shank_pitch" reason="Never"/>
+    <disable_collisions link1="l_foot_roll" link2="r_foot_roll" reason="Never"/>
+    <disable_collisions link1="l_foot_roll" link2="waist_yaw" reason="Never"/>
+    <disable_collisions link1="l_foot_roll" link2="head_yaw" reason="Never"/>
+    <disable_collisions link1="l_foot_roll" link2="torso" reason="Never"/>
+    <disable_collisions link1="l_foot_roll" link2="l_upper_arm_roll" reason="Never"/>
+    <disable_collisions link1="l_foot_roll" link2="l_upper_arm_yaw" reason="Never"/>
+    <disable_collisions link1="l_foot_roll" link2="l_hand_yaw" reason="Never"/>
+    <disable_collisions link1="l_foot_roll" link2="r_upper_arm_roll" reason="Never"/>
+    <disable_collisions link1="l_foot_roll" link2="r_upper_arm_yaw" reason="Never"/>
+    <disable_collisions link1="l_foot_roll" link2="r_hand_yaw" reason="Never"/>
+    <disable_collisions link1="r_foot_roll" link2="base" reason="Never"/>
+    <disable_collisions link1="r_foot_roll" link2="l_thigh_yaw" reason="Never"/>
+    <disable_collisions link1="r_foot_roll" link2="l_thigh_pitch" reason="Never"/>
+    <disable_collisions link1="r_foot_roll" link2="l_shank_pitch" reason="Never"/>
+    <disable_collisions link1="r_foot_roll" link2="r_thigh_yaw" reason="Never"/>
+    <disable_collisions link1="r_foot_roll" link2="r_thigh_pitch" reason="Never"/>
+    <disable_collisions link1="r_foot_roll" link2="r_shank_pitch" reason="Never"/>
+    <disable_collisions link1="r_foot_roll" link2="r_foot_roll" reason="Never"/>
+    <disable_collisions link1="r_foot_roll" link2="waist_yaw" reason="Never"/>
+    <disable_collisions link1="r_foot_roll" link2="head_yaw" reason="Never"/>
+    <disable_collisions link1="r_foot_roll" link2="torso" reason="Never"/>
+    <disable_collisions link1="r_foot_roll" link2="l_upper_arm_roll" reason="Never"/>
+    <disable_collisions link1="r_foot_roll" link2="l_upper_arm_yaw" reason="Never"/>
+    <disable_collisions link1="r_foot_roll" link2="l_hand_yaw" reason="Never"/>
+    <disable_collisions link1="r_foot_roll" link2="r_upper_arm_roll" reason="Never"/>
+    <disable_collisions link1="r_foot_roll" link2="r_upper_arm_yaw" reason="Never"/>
+    <disable_collisions link1="r_foot_roll" link2="r_hand_yaw" reason="Never"/>
+</robot>

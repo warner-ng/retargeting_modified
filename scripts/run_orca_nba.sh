@@ -1,0 +1,10 @@
+python src/main.py \
+    -path robot/OrcaNBA \
+    -urdf urdf/orca.urdf \
+    -srdf urdf/orca.srdf \
+    -pkg robot/ \
+    -yaml config/orca_nba.yml \
+    -smpl smpl \
+    -data smpl_data/amass_nba_train.pkl \
+    -output output/orca_data/nba_train \
+    -rate 30 -print_joints

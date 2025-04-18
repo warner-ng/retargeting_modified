@@ -1,0 +1,219 @@
+Name: H1
+Root: pelvis
+# T-Pose（直立站立，双臂水平伸展）状态下的各个关节的角度  
+TPoseJointPositions:
+  left_hip_pitch_joint: -15.0   
+  right_hip_pitch_joint: -15.0
+  left_knee_joint: 30.0
+  right_knee_joint: 30.0            # 这个改了没有明显作用
+  left_ankle_pitch_joint: -15.0
+  right_ankle_pitch_joint: -15.0    # 这个改了-150时候，ankle撬到天上
+
+  left_shoulder_roll_joint: 90.0
+  right_shoulder_roll_joint: -90.0
+  left_elbow_joint: 90.0
+  right_elbow_joint: 90.0
+
+# 定义某几个关节角度的最小值范围。
+ClipMinJointPositions:
+  left_knee_joint: 20.0
+  right_knee_joint: 20.0
+
+# 定义某几个关节角度的最大值范围。
+ClipMaxJointPositions:
+  left_elbow_joint: 95.0
+  right_elbow_joint: 95.0
+
+# AMASS数据集有几个关节，例如pelvis, spine, collar, shoulder, elbow等等。在这里需要做binding与宇树机器人的joint对应
+SkeletonBinding:
+  pelvis: keyframe_pelvis_link
+  spine1: keyframe_torso_link
+  spine3: keyframe_head_link
+
+  r_collar: keyframe_left_collar_link
+  l_collar: keyframe_right_collar_link
+
+  r_shoulder: keyframe_left_shoulder_link
+  l_shoulder: keyframe_right_shoulder_link
+
+  r_elbow: keyframe_left_elbow_link
+  l_elbow: keyframe_right_elbow_link
+
+  r_wrist: keyframe_left_wrist_link
+  l_wrist: keyframe_right_wrist_link
+
+  r_hip: keyframe_left_hip_link
+  l_hip: keyframe_right_hip_link
+
+  r_knee: keyframe_left_knee_link
+  l_knee: keyframe_right_knee_link
+
+  r_ankle: keyframe_left_ankle_link
+  l_ankle: keyframe_right_ankle_link
+
+# 骨骼位置的xx（）
+SkeletonHacking:
+  r_knee: [0.0, 0.01, 0.0]
+  l_knee: [0.0, -0.01, 0.0]
+  r_ankle: [0.02, 0.02, 0.0] 
+  l_ankle: [0.02, -0.02, 0.0]   # 改这个没有变化，所以什么是hacking
+
+# 目标关节的xx()
+TargetHacking:
+  r_elbow: [0.0, 0.0, -0.0]   # 改这个没有变化，所以什么是hacking
+  l_elbow: [0.0, -0.0, -0.0]
+  r_wrist: [0.0, 0.0, -0.0]
+  l_wrist: [0.0, -0.0, -0.0]
+
+# reward的scale，里面的参数自己要调 （看起来没什么规律，例如position有的给很大有的给很小）
+# frame task也许是参考系（也就是各个Link/joint）的task       frame: Frame name, typically the name of a link or joint from the robot description.
+FrameTasks:
+  pelvis:
+    link_name: keyframe_pelvis_link
+    pos_smpl_joint: ['pelvis']
+    rpy_smpl_joint: ['pelvis']
+    axes_rotation: [0., 0., 0.]
+    cost:
+      position: 0.0
+      orientation: 200.0
+      damping: 0.0 
+      gain: 0.1 
+
+  head:
+    link_name: keyframe_head_link
+    pos_smpl_joint: ['spine3']
+    rpy_smpl_joint: ['spine3']
+    axes_rotation: [0., 0., 0.]
+    cost:
+      position: 400.0
+      orientation: 200.0
+      damping: 0.0
+      gain: 0.1
+
+  left_hip: 
+    link_name: keyframe_left_hip_link
+    pos_smpl_joint: ['r_hip']
+    rpy_smpl_joint: ['r_hip']
+    axes_rotation: [0., 0., 0.]
+    cost:
+      position: 200.0
+      orientation: 0.0
+      damping: 0.0
+      gain: 0.1
+
+  right_hip: 
+    link_name: keyframe_right_hip_link
+    pos_smpl_joint: ['l_hip']
+    rpy_smpl_joint: ['l_hip']
+    axes_rotation: [0., 0., 0.]
+    cost:
+      position: 200.0
+      orientation: 0.0
+      damping: 0.0
+      gain: 0.1
+
+  left_ankle: 
+    link_name: keyframe_left_ankle_link
+    pos_smpl_joint: ['r_ankle']
+    rpy_smpl_joint: ['r_foot']
+    axes_rotation: [0., 0., 0.]
+    cost:
+      position: 15000.0
+      orientation: 200.0
+      damping: 0.75
+      gain: 0.1
+
+  right_ankle: 
+    link_name: keyframe_right_ankle_link
+    pos_smpl_joint: ['l_ankle']
+    rpy_smpl_joint: ['l_foot']
+    axes_rotation: [0., 0., 0.]
+    cost:
+      position: 1500.0
+      orientation: 200.0
+      damping: 0.75 
+      gain: 0.1
+  
+
+RelativeFrameTasks:
+  left_shoulder:
+    link_name: keyframe_left_shoulder_link
+    root_name: r_collar
+    pos_smpl_joint: ['r_shoulder']
+    rpy_smpl_joint: ['r_shoulder']
+    axes_rotation: [90., 0., 0.]
+    cost:
+      position: 0.0
+      orientation: 200.0
+      damping: 0.75
+      gain: 0.1
+
+  right_shoulder:
+    link_name: keyframe_right_shoulder_link
+    root_name: l_collar
+    pos_smpl_joint: ['l_shoulder']
+    rpy_smpl_joint: ['l_shoulder']
+    axes_rotation: [-90, 0., 0.]
+    cost:
+      position: 0.0
+      orientation: 200.0
+      damping: 0.75
+      gain: 0.1
+
+  left_elbow:
+    link_name: keyframe_left_elbow_link
+    root_name: r_collar
+    pos_smpl_joint: ['r_elbow']
+    rpy_smpl_joint: ['r_elbow']
+    axes_rotation: [90., 0., 90.]
+    cost:
+      position: 0.0
+      orientation: 200.0
+      damping: 0.75
+      gain: 0.1
+
+  right_elbow:
+    link_name: keyframe_right_elbow_link
+    root_name: l_collar
+    pos_smpl_joint: ['l_elbow']
+    rpy_smpl_joint: ['l_elbow']
+    axes_rotation: [-90., 0., -90.]
+    cost:
+      position: 0.0
+      orientation: 200.0
+      damping: 0.75
+      gain: 0.1
+  
+  left_wrist:
+    link_name: keyframe_left_wrist_link
+    root_name: r_collar
+    pos_smpl_joint: ['r_wrist']
+    rpy_smpl_joint: ['r_elbow']
+    axes_rotation: [90., 0., 90.]
+    cost:
+      position: 200.0
+      orientation: 0.0
+      damping: 0.75
+      gain: 0.1
+
+  right_wrist:
+    link_name: keyframe_right_wrist_link
+    root_name: l_collar
+    pos_smpl_joint: ['l_wrist']
+    rpy_smpl_joint: ['l_elbow']
+    axes_rotation: [-90., 0., -90.]
+    cost:
+      position: 200.0
+      orientation: 0.0
+      damping: 0.75
+      gain: 0.1
+
+
+CoMTask:
+  cost: [50.0, 50.0, 0.0]
+  damping: 1.0
+  gain: 0.1
+
+
+AccelerationTask:
+  cost: 100.0
