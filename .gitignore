@@ -4,3 +4,7 @@
 __pycache__
 *DS_Store
 *test*
+
+# 显式允许 _dataset 文件或目录
+!_dataset
+!/_dataset/
