@@ -83,8 +83,7 @@
           </geometry>
         </collision> -->
     </link>
-    <joint
-            name="left_hip_pitch_joint"
+    <joint name="left_hip_pitch_joint"
             type="revolute">
         <origin
                 xyz="0 0.050453 -0.067365"
@@ -140,8 +139,7 @@
             </geometry>
         </collision>
     </link>
-    <joint
-            name="left_hip_roll_joint"
+    <joint name="left_hip_roll_joint"
             type="revolute">
         <origin
                 xyz="0 0.072 0"
@@ -197,8 +195,7 @@
             </geometry>
         </collision>
     </link>
-    <joint
-            name="left_hip_yaw_joint"
+    <joint name="left_hip_yaw_joint"
             type="revolute">
         <origin
                 xyz="0 0 -0.0815"
@@ -254,8 +251,7 @@
             </geometry>
         </collision>
     </link>
-    <joint
-            name="left_knee_pitch_joint"
+    <joint name="left_knee_pitch_joint"
             type="revolute">
         <origin
                 xyz="0 0 -0.2075"
@@ -312,8 +308,7 @@
           </geometry>
         </collision> -->
     </link>
-    <joint
-            name="left_ankle_roll_joint"
+    <joint name="left_ankle_roll_joint"
             type="revolute">
         <origin
                 xyz="0 0 -0.28"
@@ -370,8 +365,7 @@
             </geometry>
         </collision>
     </link>
-    <joint
-            name="left_ankle_pitch_joint"
+    <joint name="left_ankle_pitch_joint"
             type="revolute">
         <origin
                 xyz="0 0 0"
@@ -428,8 +422,7 @@
           </geometry>
         </collision> -->
     </link>
-    <joint
-            name="right_hip_pitch_joint"
+    <joint name="right_hip_pitch_joint"
             type="revolute">
         <origin
                 xyz="0 -0.050453 -0.067365"
@@ -485,8 +478,7 @@
             </geometry>
         </collision>
     </link>
-    <joint
-            name="right_hip_roll_joint"
+    <joint name="right_hip_roll_joint"
             type="revolute">
         <origin
                 xyz="0 -0.072 0"
@@ -542,8 +534,7 @@
             </geometry>
         </collision>
     </link>
-    <joint
-            name="right_hip_yaw_joint"
+    <joint name="right_hip_yaw_joint"
             type="revolute">
         <origin
                 xyz="0 0 -0.0815"
@@ -599,8 +590,7 @@
             </geometry>
         </collision>
     </link>
-    <joint
-            name="right_knee_pitch_joint"
+    <joint name="right_knee_pitch_joint"
             type="revolute">
         <origin
                 xyz="0 0 -0.2075"
@@ -657,8 +647,7 @@
           </geometry>
         </collision> -->
     </link>
-    <joint
-            name="right_ankle_roll_joint"
+    <joint name="right_ankle_roll_joint"
             type="revolute">
         <origin
                 xyz="0 0 -0.28"
@@ -715,8 +704,7 @@
             </geometry>
         </collision>
     </link>
-    <joint
-            name="right_ankle_pitch_joint"
+    <joint name="right_ankle_pitch_joint"
             type="revolute">
         <origin
                 xyz="0 0 0"
@@ -773,8 +761,7 @@
           </geometry>
         </collision> -->
     </link>
-    <joint
-            name="imu_joint"
+    <joint name="imu_joint"
             type="fixed">
         <origin
                 xyz="0 0 -0.1472"
@@ -825,8 +812,7 @@
             </geometry>
         </collision>
     </link>
-    <joint
-            name="waist_yaw_joint"
+    <joint name="waist_yaw_joint"
             type="revolute">
         <origin
                 xyz="0 0 0.0256"
@@ -890,8 +876,7 @@
             </geometry>
         </collision>
     </link>
-    <joint
-            name="torso_joint"
+    <joint name="torso_joint"
             type="fixed">
         <origin
                 xyz="0 0 0.2598"
@@ -943,8 +928,7 @@
           </geometry>
         </collision> -->
     </link>
-    <joint
-            name="camera_joint"
+    <joint name="camera_joint"
             type="fixed">
         <origin
                 xyz="0.071343 -0.0048077 0.17959"
@@ -996,8 +980,7 @@
           </geometry>
         </collision> -->
     </link>
-    <joint
-            name="left_shoulder_pitch_joint"
+    <joint name="left_shoulder_pitch_joint"
             type="revolute">
         <origin
                 xyz="0 0.09765 0"
@@ -1053,8 +1036,7 @@
             </geometry>
         </collision>
     </link>
-    <joint
-            name="left_shoulder_roll_joint"
+    <joint name="left_shoulder_roll_joint"
             type="revolute">
         <origin
                 xyz="0 0.078 0"
@@ -1110,8 +1092,7 @@
             </geometry>
         </collision>
     </link>
-    <joint
-            name="left_shoulder_yaw_joint"
+    <joint name="left_shoulder_yaw_joint"
             type="revolute">
         <origin
                 xyz="0 0 -0.1005"
@@ -1168,8 +1149,7 @@
           </geometry>
         </collision> -->
     </link>
-    <joint
-            name="left_elbow_pitch_joint"
+    <joint name="left_elbow_pitch_joint"
             type="revolute">
         <origin
                 xyz="0 0 -0.1095"
@@ -1225,8 +1205,7 @@
             </geometry>
         </collision>
     </link>
-    <joint
-            name="left_wrist_yaw_joint"
+    <joint name="left_wrist_yaw_joint"
             type="revolute">
         <origin
                 xyz="0 0 -0.1005"
@@ -1282,8 +1261,7 @@
             </geometry>
         </collision>
     </link>
-    <joint
-            name="left_end_effector_joint"
+    <joint name="left_end_effector_joint"
             type="fixed">
         <origin
                 xyz="0 0 -0.1045"
@@ -1335,8 +1313,7 @@
           </geometry>
         </collision> -->
     </link>
-    <joint
-            name="right_shoulder_pitch_joint"
+    <joint name="right_shoulder_pitch_joint"
             type="revolute">
         <origin
                 xyz="0 -0.09765 0"
@@ -1392,8 +1369,7 @@
             </geometry>
         </collision>
     </link>
-    <joint
-            name="right_shoulder_roll_joint"
+    <joint name="right_shoulder_roll_joint"
             type="revolute">
         <origin
                 xyz="0 -0.078 0"
@@ -1449,8 +1425,7 @@
             </geometry>
         </collision>
     </link>
-    <joint
-            name="right_shoulder_yaw_joint"
+    <joint name="right_shoulder_yaw_joint"
             type="revolute">
         <origin
                 xyz="0 0 -0.1005"
@@ -1507,8 +1482,7 @@
           </geometry>
         </collision> -->
     </link>
-    <joint
-            name="right_elbow_pitch_joint"
+    <joint name="right_elbow_pitch_joint"
             type="revolute">
         <origin
                 xyz="0 0 -0.1095"
@@ -1564,8 +1538,7 @@
             </geometry>
         </collision>
     </link>
-    <joint
-            name="right_wrist_yaw_joint"
+    <joint name="right_wrist_yaw_joint"
             type="revolute">
         <origin
                 xyz="0 0 -0.1005"
@@ -1621,8 +1594,7 @@
             </geometry>
         </collision>
     </link>
-    <joint
-            name="right_end_effector_joint"
+    <joint name="right_end_effector_joint"
             type="fixed">
         <origin
                 xyz="0 0 -0.1045"
@@ -1634,4 +1606,232 @@
         <axis
                 xyz="0 0 0"/>
     </joint>
+    
+  <!-- Keyframe -->
+  <link name="keyframe_head_link">
+    <!-- <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual> -->
+  </link>
+  <joint name="keyframe_head_joint" type="fixed">
+    <origin xyz="0 0 0.28" rpy="0 0 0"/>
+    <parent link="torso"/>
+    <child link="keyframe_head_link"/>
+  </joint>
+  <link name="keyframe_torso_link">
+    <!-- <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual> -->
+  </link>
+  <joint name="keyframe_torso_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="torso"/>
+    <child link="keyframe_torso_link"/>
+  </joint>
+  <link name="keyframe_pelvis_link">
+    <!-- <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual> -->
+  </link>
+  <joint name="keyframe_pelvis_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="base"/>
+    <child link="keyframe_pelvis_link"/>
+  </joint>
+
+  <link name="keyframe_left_collar_link">
+    <!-- <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual> -->
+  </link>
+  <joint name="keyframe_left_collar_joint" type="fixed">
+    <origin xyz="0 0 0.04" rpy="0 0 0"/>
+    <parent link="l_upper_arm_pitch"/>
+    <child link="keyframe_left_collar_link"/>
+  </joint>
+  <link name="keyframe_right_collar_link">
+    <!-- <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual> -->
+  </link>
+  <joint name="keyframe_right_collar_joint" type="fixed">
+    <origin xyz="0 0 0.04" rpy="0 0 0"/>
+    <parent link="r_upper_arm_pitch"/>
+    <child link="keyframe_right_collar_link"/>
+  </joint>
+
+  <link name="keyframe_left_shoulder_link">
+    <!-- <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual> -->
+  </link>
+  <joint name="keyframe_left_shoulder_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="l_upper_arm_roll"/>
+    <child link="keyframe_left_shoulder_link"/>
+  </joint>
+  <link name="keyframe_right_shoulder_link">
+    <!-- <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual> -->
+  </link>
+  <joint name="keyframe_right_shoulder_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="r_upper_arm_roll"/>
+    <child link="keyframe_right_shoulder_link"/>
+  </joint>
+  <link name="keyframe_left_elbow_link">
+    <!-- <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual> -->
+  </link>
+  <joint name="keyframe_left_elbow_pitch_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="l_lower_arm_pitch"/>
+    <child link="keyframe_left_elbow_link"/>
+  </joint>
+  <link name="keyframe_right_elbow_link">
+    <!-- <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual> -->
+  </link>
+  <joint name="keyframe_elbow_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="r_lower_arm_pitch"/>
+    <child link="keyframe_right_elbow_link"/>
+  </joint>
+  <link name="keyframe_left_wrist_link">
+    <!-- <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual> -->
+  </link>
+  <joint name="keyframe_left_wrist_joint" type="fixed">
+    <origin xyz="0 0 -0.1" rpy="0 0 0"/>
+    <parent link="l_hand_pitch"/>
+    <child link="keyframe_left_wrist_link"/>
+  </joint>
+  <link name="keyframe_right_wrist_link">
+    <!-- <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual> -->
+  </link>
+  <joint name="keyframe_right_wrist_joint" type="fixed">
+    <origin xyz="0 0 -0.1" rpy="0 0 0"/>
+    <parent link="r_hand_pitch"/>
+    <child link="keyframe_right_wrist_link"/>
+  </joint>
+
+  <link name="keyframe_left_hip_link">
+    <!-- <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual> -->
+  </link>
+  <joint name="keyframe_left_hip_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="l_thigh_roll"/>
+    <child link="keyframe_left_hip_link"/>
+  </joint>
+  <link name="keyframe_right_hip_link">
+    <!-- <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual> -->
+  </link>
+  <joint name="keyframe_right_hip_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="r_thigh_roll"/>
+    <child link="keyframe_right_hip_link"/>
+  </joint>
+  <link name="keyframe_left_knee_link">
+    <!-- <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual> -->
+  </link>
+  <joint name="keyframe_left_knee_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="l_shank_pitch"/>
+    <child link="keyframe_left_knee_link"/>
+  </joint>
+  <link name="keyframe_right_knee_link">
+    <!-- <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual> -->
+  </link>
+  <joint name="keyframe_right_knee_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="r_shank_pitch"/>
+    <child link="keyframe_right_knee_link"/>
+  </joint>
+  <link name="keyframe_left_ankle_link">
+    <!-- <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual> -->
+  </link>
+  <joint name="keyframe_left_ankle_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="l_foot_roll"/>
+    <child link="keyframe_left_ankle_link"/>
+  </joint>
+  <link name="keyframe_right_ankle_link">
+    <!-- <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual> -->
+  </link>
+  <joint name="keyframe_right_ankle_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="r_foot_roll"/>
+    <child link="keyframe_right_ankle_link"/>
+  </joint>
+
 </robot>
+

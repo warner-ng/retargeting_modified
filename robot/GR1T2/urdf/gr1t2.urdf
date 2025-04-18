@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<robot name="GR1T2">
+<robot name="../../GR1T2">
   <link name="base">
     <inertial>
       <origin xyz="-0.048532508678753 -0.000893272453031863 -0.0328511449818798" rpy="0 0 0" />
@@ -10,7 +10,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/base.STL" />
+        <mesh filename="../../GR1T2/meshes/base.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -20,7 +20,7 @@
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh
-        filename="GR1T2/meshes/base.STL" />
+        filename="../../GR1T2/meshes/base.STL" />
       </geometry>
     </collision>
   </link>
@@ -34,7 +34,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/l_thigh_roll.STL" />
+        <mesh filename="../../GR1T2/meshes/l_thigh_roll.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -58,7 +58,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/l_thigh_yaw.STL" />
+        <mesh filename="../../GR1T2/meshes/l_thigh_yaw.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -68,7 +68,7 @@
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh
-        filename="GR1T2/meshes/l_thigh_yaw.STL" />
+        filename="../../GR1T2/meshes/l_thigh_yaw.STL" />
       </geometry>
     </collision>
   </link>
@@ -89,7 +89,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/l_thigh_pitch.STL" />
+        <mesh filename="../../GR1T2/meshes/l_thigh_pitch.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -129,7 +129,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/l_shank_pitch.STL" />
+        <mesh filename="../../GR1T2/meshes/l_shank_pitch.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -161,7 +161,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/l_foot_pitch.STL" />
+        <mesh filename="../../GR1T2/meshes/l_foot_pitch.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -185,7 +185,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/l_foot_roll.STL" />
+        <mesh filename="../../GR1T2/meshes/l_foot_roll.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -221,7 +221,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/r_thigh_roll.STL" />
+        <mesh filename="../../GR1T2/meshes/r_thigh_roll.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -245,7 +245,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/r_thigh_yaw.STL" />
+        <mesh filename="../../GR1T2/meshes/r_thigh_yaw.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -255,7 +255,7 @@
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh
-        filename="GR1T2/meshes/r_thigh_yaw.STL" />
+        filename="../../GR1T2/meshes/r_thigh_yaw.STL" />
       </geometry>
     </collision>
   </link>
@@ -276,7 +276,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/r_thigh_pitch.STL" />
+        <mesh filename="../../GR1T2/meshes/r_thigh_pitch.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -316,7 +316,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/r_shank_pitch.STL" />
+        <mesh filename="../../GR1T2/meshes/r_shank_pitch.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -348,7 +348,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/r_foot_pitch.STL" />
+        <mesh filename="../../GR1T2/meshes/r_foot_pitch.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -372,7 +372,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/r_foot_roll.STL" />
+        <mesh filename="../../GR1T2/meshes/r_foot_roll.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -408,7 +408,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/waist_yaw.STL" />
+        <mesh filename="../../GR1T2/meshes/waist_yaw.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -418,7 +418,7 @@
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh
-        filename="GR1T2/meshes/waist_yaw.STL" />
+        filename="../../GR1T2/meshes/waist_yaw.STL" />
       </geometry>
     </collision>
   </link>
@@ -439,7 +439,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/waist_pitch.STL" />
+        <mesh filename="../../GR1T2/meshes/waist_pitch.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -463,7 +463,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/waist_roll.STL" />
+        <mesh filename="../../GR1T2/meshes/waist_roll.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -487,7 +487,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/head_pitch.STL" />
+        <mesh filename="../../GR1T2/meshes/head_pitch.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -511,7 +511,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/head_roll.STL" />
+        <mesh filename="../../GR1T2/meshes/head_roll.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -535,7 +535,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/head_yaw.STL" />
+        <mesh filename="../../GR1T2/meshes/head_yaw.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -567,7 +567,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/torso.STL" />
+        <mesh filename="../../GR1T2/meshes/torso.STL" />
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1" />
@@ -577,7 +577,7 @@
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh
-        filename="GR1T2/meshes/torso.STL" />
+        filename="../../GR1T2/meshes/torso.STL" />
       </geometry>
     </collision>
   </link>
@@ -597,7 +597,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/l_upper_arm_pitch.STL" />
+        <mesh filename="../../GR1T2/meshes/l_upper_arm_pitch.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -621,7 +621,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/l_upper_arm_roll.STL" />
+        <mesh filename="../../GR1T2/meshes/l_upper_arm_roll.STL" />
       </geometry>
       <material name="">
         <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
@@ -653,7 +653,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/l_upper_arm_yaw.STL" />
+        <mesh filename="../../GR1T2/meshes/l_upper_arm_yaw.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -685,7 +685,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/l_lower_arm_pitch.STL" />
+        <mesh filename="../../GR1T2/meshes/l_lower_arm_pitch.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -709,7 +709,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/l_hand_yaw.STL" />
+        <mesh filename="../../GR1T2/meshes/l_hand_yaw.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -741,7 +741,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/l_hand_roll.STL" />
+        <mesh filename="../../GR1T2/meshes/l_hand_roll.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -765,7 +765,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/l_hand_pitch.STL" />
+        <mesh filename="../../GR1T2/meshes/l_hand_pitch.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -797,7 +797,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/r_upper_arm_pitch.STL" />
+        <mesh filename="../../GR1T2/meshes/r_upper_arm_pitch.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -821,7 +821,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/r_upper_arm_roll.STL" />
+        <mesh filename="../../GR1T2/meshes/r_upper_arm_roll.STL" />
       </geometry>
       <material name="">
         <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
@@ -853,7 +853,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/r_upper_arm_yaw.STL" />
+        <mesh filename="../../GR1T2/meshes/r_upper_arm_yaw.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -885,7 +885,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/r_lower_arm_pitch.STL" />
+        <mesh filename="../../GR1T2/meshes/r_lower_arm_pitch.STL" />
       </geometry>
       <material name="">
         <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -909,7 +909,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/r_hand_yaw.STL" />
+        <mesh filename="../../GR1T2/meshes/r_hand_yaw.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -941,7 +941,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/r_hand_roll.STL" />
+        <mesh filename="../../GR1T2/meshes/r_hand_roll.STL" />
       </geometry>
       <material name="">
         <color rgba="0.890196078431372 0.890196078431372 0.913725490196078 1" />
@@ -965,7 +965,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="GR1T2/meshes/r_hand_pitch.STL" />
+        <mesh filename="../../GR1T2/meshes/r_hand_pitch.STL" />
       </geometry>
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
