@@ -1582,7 +1582,7 @@
 
 
   <!-- Keyframe -->
-  <link name="keyframe_head">
+  <link name="keyframe_head_link">
     <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -1593,9 +1593,9 @@
   <joint name="keyframe_head_joint" type="fixed">
     <origin xyz="0 0 0.18" rpy="0 0 0"/>
     <parent link="torso"/>
-    <child link="keyframe_head"/>
+    <child link="keyframe_head_link"/>
   </joint>
-  <link name="keyframe_torso">
+  <link name="keyframe_torso_link">
     <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -1606,9 +1606,9 @@
   <joint name="keyframe_torso_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="torso"/>
-    <child link="keyframe_torso"/>
+    <child link="keyframe_torso_link"/>
   </joint>
-  <link name="keyframe_pelvis">
+  <link name="keyframe_pelvis_link">
     <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -1619,10 +1619,10 @@
   <joint name="keyframe_pelvis_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="base"/>
-    <child link="keyframe_pelvis"/>
+    <child link="keyframe_pelvis_link"/>
   </joint>
 
-  <link name="keyframe_left_collar">
+  <link name="keyframe_left_collar_link">
     <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -1633,9 +1633,9 @@
   <joint name="keyframe_left_collar_joint" type="fixed">
     <origin xyz="0 0 0.04" rpy="0 0 0"/>
     <parent link="left_upper_arm_pitch"/>
-    <child link="keyframe_left_collar"/>
+    <child link="keyframe_left_collar_link"/>
   </joint>
-  <link name="keyframe_right_collar">
+  <link name="keyframe_right_collar_link">
     <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -1646,10 +1646,10 @@
   <joint name="keyframe_right_collar_joint" type="fixed">
     <origin xyz="0 0 0.04" rpy="0 0 0"/>
     <parent link="right_upper_arm_pitch"/>
-    <child link="keyframe_right_collar"/>
+    <child link="keyframe_right_collar_link"/>
   </joint>
 
-  <link name="keyframe_left_shoulder">
+  <link name="keyframe_left_shoulder_link">
     <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -1660,9 +1660,9 @@
   <joint name="keyframe_left_shoulder_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="left_upper_arm_roll"/>
-    <child link="keyframe_left_shoulder"/>
+    <child link="keyframe_left_shoulder_link"/>
   </joint>
-  <link name="keyframe_right_shoulder">
+  <link name="keyframe_right_shoulder_link">
     <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -1673,9 +1673,9 @@
   <joint name="keyframe_right_shoulder_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="right_upper_arm_roll"/>
-    <child link="keyframe_right_shoulder"/>
+    <child link="keyframe_right_shoulder_link"/>
   </joint>
-  <link name="keyframe_left_elbow">
+  <link name="keyframe_left_elbow_link">
     <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -1686,10 +1686,10 @@
   <joint name="keyframe_left_elbow_pitch_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="left_lower_arm_pitch"/>
-    <child link="keyframe_left_elbow"/>
+    <child link="keyframe_left_elbow_link"/>
   </joint>
   
-  <link name="keyframe_right_elbow">
+  <link name="keyframe_right_elbow_link">
     <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -1700,9 +1700,9 @@
   <joint name="keyframe_elbow_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="right_lower_arm_pitch"/>
-    <child link="keyframe_right_elbow"/>
+    <child link="keyframe_right_elbow_link"/>
   </joint>
-  <link name="keyframe_left_wrist">
+  <link name="keyframe_left_wrist_link">
     <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -1713,9 +1713,9 @@
   <joint name="keyframe_left_wrist_joint" type="fixed">
     <origin xyz="0 0 -0.1" rpy="0 0 0"/>
     <parent link="left_hand_yaw"/>
-    <child link="keyframe_left_wrist"/>
+    <child link="keyframe_left_wrist_link"/>
   </joint>
-  <link name="keyframe_right_wrist">
+  <link name="keyframe_right_wrist_link">
     <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -1726,10 +1726,10 @@
   <joint name="keyframe_right_wrist_joint" type="fixed">
     <origin xyz="0 0 -0.1" rpy="0 0 0"/>
     <parent link="right_hand_yaw"/>
-    <child link="keyframe_right_wrist"/>
+    <child link="keyframe_right_wrist_link"/>
   </joint>
 
-  <link name="keyframe_left_hip">
+  <link name="keyframe_left_hip_link">
     <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -1740,9 +1740,9 @@
   <joint name="keyframe_left_hip_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="left_thigh_roll"/>
-    <child link="keyframe_left_hip"/>
+    <child link="keyframe_left_hip_link"/>
   </joint>
-  <link name="keyframe_right_hip">
+  <link name="keyframe_right_hip_link">
     <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -1753,9 +1753,9 @@
   <joint name="keyframe_right_hip_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="right_thigh_roll"/>
-    <child link="keyframe_right_hip"/>
+    <child link="keyframe_right_hip_link"/>
   </joint>
-  <link name="keyframe_left_knee">
+  <link name="keyframe_left_knee_link">
     <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -1766,9 +1766,9 @@
   <joint name="keyframe_left_knee_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="left_shank_pitch"/>
-    <child link="keyframe_left_knee"/>
+    <child link="keyframe_left_knee_link"/>
   </joint>
-  <link name="keyframe_right_knee">
+  <link name="keyframe_right_knee_link">
     <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -1779,9 +1779,9 @@
   <joint name="keyframe_right_knee_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="right_shank_pitch"/>
-    <child link="keyframe_right_knee"/>
+    <child link="keyframe_right_knee_link"/>
   </joint>
-  <link name="keyframe_left_ankle">
+  <link name="keyframe_left_ankle_link">
     <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -1792,9 +1792,9 @@
   <joint name="keyframe_left_ankle_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="left_foot_roll"/>
-    <child link="keyframe_left_ankle"/>
+    <child link="keyframe_left_ankle_link"/>
   </joint>
-  <link name="keyframe_right_ankle">
+  <link name="keyframe_right_ankle_link">
     <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -1805,7 +1805,7 @@
   <joint name="keyframe_right_ankle_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="right_foot_roll"/>
-    <child link="keyframe_right_ankle"/>
+    <child link="keyframe_right_ankle_link"/>
   </joint>
 
 </robot>

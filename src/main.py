@@ -286,7 +286,7 @@ if __name__ == "__main__":# 解析参数-初始化-指定任务-ik求解-存储
         # Load mocap trajectory
         skip = max(1, int(mocap_data["mocap_framerate"] / args.rate))                  #帧率/采样率 = 间隔skip
         betas = torch.tensor(mocap_data["betas"][np.newaxis, 0:10], dtype=torch.float) #形状参数betas(1维)转tensor,并新增一个维度
-        full_pose = torch.tensor(blend_motion(mocap_data["poses"][:, 0:66], skip), dtype=torch.float)    # 局部debug # pose转tensor
+        full_pose = torch.tensor(blend_motion(mocap_data["poses"][:, 0:66], skip), dtype=torch.float)*0   # 局部debug # pose转tensor
         trans = torch.tensor(blend_motion(mocap_data["trans"], skip), dtype=torch.float)        # trans转tensor
                 
                 

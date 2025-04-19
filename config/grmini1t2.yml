@@ -5,8 +5,11 @@ Root: pelvis
 TPoseJointPositions:
   left_knee_pitch_joint: 25.0
   right_knee_pitch_joint: 25.0
+
   left_shoulder_roll_joint: 90.0
   right_shoulder_roll_joint: -90.0
+  left_elbow_pitch_joint: 90.0
+  right_elbow_pitch_joint: 90.0
 
 
 ClipMinJointPositions:
