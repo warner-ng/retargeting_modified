@@ -3,20 +3,20 @@ Root: pelvis
 
 
 TPoseJointPositions:
-  l_knee_pitch_joint: 25.0
-  r_knee_pitch_joint: 25.0
+  left_knee_pitch_joint: 25.0
+  right_knee_pitch_joint: 25.0
   left_shoulder_roll_joint: 90.0
-  r_shoulder_roll_joint: -90.0
+  right_shoulder_roll_joint: -90.0
 
 
 ClipMinJointPositions:
-  l_knee_pitch_joint: 20.0
-  r_knee_pitch_joint: 20.0
+  left_knee_pitch_joint: 20.0
+  right_knee_pitch_joint: 20.0
 
 
 ClipMaxJointPositions:
-  l_elbow_pitch_joint: 5.0
-  r_elbow_pitch_joint: 5.0
+  left_elbow_pitch_joint: 5.0
+  right_elbow_pitch_joint: 5.0
 
 
 SkeletonBinding:
