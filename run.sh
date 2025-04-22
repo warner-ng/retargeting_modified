@@ -19,7 +19,7 @@ function PushQue {
 }
 
 function GenQue {
-    OldQue=$Que; Que=""; Nrun=0
+    OldQue=$Que; Que=""; Nrun=0bash
     for PID in $OldQue; do
         if [[ -d /proc/$PID ]]; then
             PushQue $PID

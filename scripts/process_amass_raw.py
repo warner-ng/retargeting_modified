@@ -32,25 +32,25 @@ from tqdm import tqdm
 
 min_framerate = 1e7
 all_sequences = [
-    # "ACCAD",
+    "ACCAD",
     # "BMLmovi",
     # "BioMotionLab_NTroje",
     # "CMU",
     # "DFaust_67",
     # "EKUT",
     # "Eyes_Japan_Dataset",
-    # "HumanEva",
+    "HumanEva",
     # "KIT",
     # "MPI_HDM05",
     # "MPI_Limits",
     # "MPI_mosh",
-    "SFU",
+    # "SFU",
     # "SSM_synced",
-    "TCD_handMocap",
-    "TotalCapture",
+    # "TCD_handMocap",
+    # "TotalCapture",
     "Transitions_mocap",
-    "BMLhandball",
-    "DanceDB",
+    # "BMLhandball",
+    # "DanceDB",
 ]
 
 def read_data(folder):
