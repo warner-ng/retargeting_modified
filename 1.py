@@ -25,7 +25,7 @@ import utils
 
 MIN_HEIGHT_THRESHOLD = 0.02
 
-
+ 
 smpl_body_names = [
     "pelvis",
     "r_hip", "l_hip",
