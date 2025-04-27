@@ -25,7 +25,10 @@ import utils
 
 MIN_HEIGHT_THRESHOLD = 0.02
 
- 
+"""
+加上free flyer所对应的SMPL_BODY_NAMES
+
+"""
 smpl_body_names = [
     "pelvis",
     "r_hip", "l_hip",
@@ -43,7 +46,10 @@ smpl_body_names = [
     "r_wrist", "l_wrist",
 ]
 
+"""
+加上free flyer
 
+"""
 human_ordered_joint_names = [
     "r_hip", "r_knee", "r_ankle", "r_foot",
     "l_hip", "l_knee", "l_ankle", "l_foot",
@@ -190,6 +196,11 @@ if __name__ == "__main__":# 解析参数-初始化-指定任务-ik求解-存储
     # Load YAML config
     # 这个是最开始的robot的config，例如h1_2.yml
     # 这里把YAML变成一个dictionary
+    
+    
+    """
+    YAML要改
+    """
     yaml_dict = yaml.load(open(args.yaml, "r", encoding="utf-8"), Loader=yaml.FullLoader)  
     
     
@@ -277,6 +288,11 @@ if __name__ == "__main__":# 解析参数-初始化-指定任务-ik求解-存储
 # 这是一个大循环（一直到末尾）
     for mocap_name, mocap_data in tqdm(pickle.load(open(args.data,"rb")).items()):  # mocap_name是键；mocap——data是值；遍历1次，取1次键key和1次值value
 
+        """
+        这下面都是在做smpl的初始化，无需修改
+        
+        
+        """
         # Re-initialize config
         v_template, shapedirs, J_regressor, parents = smpl_models[mocap_data["gender"]]         # 都是 SMPL 文件的参数
                                                                                                 #     v_template 表示人体模型的基准顶点位置;通常是一个形状为 (V, 3) 的 NumPy,V 是顶点的数量，每个顶点有三个坐标（x, y, z）。
@@ -381,7 +397,7 @@ if __name__ == "__main__":# 解析参数-初始化-指定任务-ik求解-存储
                     tasks[key].set_target(frame_target)
                     if not args.headless:
                         viz_frame_target = transform_wrt_world(config, robot_root_name) * frame_target
-                        robot_viz.viewer[f"{key}_pose"].set_transform(viz_frame_target.np)
+                        # robot_viz.viewer[f"{key}_pose"].set_transform(viz_frame_target.np)
                     
             # Setup CoM task
             human_q, human_v, human_mat = human.q0.copy(), human.v0.copy(), human_rot_mats[t]
