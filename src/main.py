@@ -163,7 +163,7 @@ if __name__ == "__main__":# 解析参数-初始化-指定任务-ik求解-存储
     parser.add_argument("-data", type=str, help="mocap data directory", required=True)
     parser.add_argument("-rate", type=int, help="target framerate", required=True)
     parser.add_argument("-output", type=str, help="output directory and file name", required=True)
-    parser.add_argument("-headless", help="start without rendering", action="store_true")
+    parser.add_argument("-headless", help="start withoukeyframet rendering", action="store_true")
     parser.add_argument("-print_joints", help="print joint indices and names", action="store_true")
     args = parser.parse_args()
     
