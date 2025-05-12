@@ -140,6 +140,7 @@ class Configuration:
             q_readonly.setflags(write=False)
             self.q = q_readonly
 
+         
         # Compute collisions, if needed
         if self.collision_model is not None:
             pin.computeCollisions(

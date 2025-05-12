@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="20">
+<geometry class_id="0" tracking_level="0" version="0">
+	<ngeoms>1</ngeoms>
+	<geometryObjects class_id="1" tracking_level="0" version="0">
+		<count>1</count>
+		<item_version>0</item_version>
+		<base class_id="2" tracking_level="0" version="0">
+			<name>sphere2</name>
+			<parentFrame>18446744073709551615</parentFrame>
+			<parentJoint>0</parentJoint>
+			<placement class_id="3" tracking_level="0" version="0">
+				<translation>
+					<item>0.00000000000000000e+00</item>
+					<item>0.00000000000000000e+00</item>
+					<item>0.00000000000000000e+00</item>
+				</translation>
+				<rotation>
+					<item>1.00000000000000000e+00</item>
+					<item>0.00000000000000000e+00</item>
+					<item>0.00000000000000000e+00</item>
+					<item>0.00000000000000000e+00</item>
+					<item>1.00000000000000000e+00</item>
+					<item>0.00000000000000000e+00</item>
+					<item>0.00000000000000000e+00</item>
+					<item>0.00000000000000000e+00</item>
+					<item>1.00000000000000000e+00</item>
+				</rotation>
+			</placement>
+		</base>
+		<item class_id="4" tracking_level="0" version="0">
+			<base>
+				<name>sphere2</name>
+				<parentFrame>18446744073709551615</parentFrame>
+				<parentJoint>0</parentJoint>
+				<placement>
+					<translation>
+						<item>0.00000000000000000e+00</item>
+						<item>0.00000000000000000e+00</item>
+						<item>0.00000000000000000e+00</item>
+					</translation>
+					<rotation>
+						<item>1.00000000000000000e+00</item>
+						<item>0.00000000000000000e+00</item>
+						<item>0.00000000000000000e+00</item>
+						<item>0.00000000000000000e+00</item>
+						<item>1.00000000000000000e+00</item>
+						<item>0.00000000000000000e+00</item>
+						<item>0.00000000000000000e+00</item>
+						<item>0.00000000000000000e+00</item>
+						<item>1.00000000000000000e+00</item>
+					</rotation>
+				</placement>
+			</base>
+			<geometry class_id="5" tracking_level="0" version="1">
+				<px class_id="-1"></px>
+			</geometry>
+			<meshPath></meshPath>
+			<meshScale class_id="6" tracking_level="0" version="0">
+				<data>
+					<item>1.00000000000000000e+00</item>
+					<item>1.00000000000000000e+00</item>
+					<item>1.00000000000000000e+00</item>
+				</data>
+			</meshScale>
+			<overrideMaterial>0</overrideMaterial>
+			<meshColor class_id="7" tracking_level="0" version="0">
+				<data>
+					<item>0.00000000000000000e+00</item>
+					<item>1.00000000000000000e+00</item>
+					<item>0.00000000000000000e+00</item>
+					<item>1.00000000000000000e+00</item>
+				</data>
+			</meshColor>
+			<meshTexturePath></meshTexturePath>
+			<disableCollision>0</disableCollision>
+		</item>
+	</geometryObjects>
+	<collisionPairs class_id="8" tracking_level="0" version="0">
+		<count>0</count>
+		<item_version>0</item_version>
+	</collisionPairs>
+	<collisionPairMapping class_id="9" tracking_level="0" version="0">
+		<rows>2</rows>
+		<cols>2</cols>
+		<data>
+			<item>-1</item>
+			<item>0</item>
+			<item>0</item>
+			<item>-1</item>
+		</data>
+	</collisionPairMapping>
+</geometry>
+</boost_serialization>
+

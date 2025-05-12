@@ -12,13 +12,15 @@ import pinocchio as pin
 from tqdm import tqdm
 from copy import deepcopy
 from pink import solve_ik
-from pinocchio import BODY
+from pinocchio import BODY 
 from loop_rate_limiters import RateLimiter
 from pinocchio.visualize import MeshcatVisualizer
 from pink.tasks import FrameTask, RelativeFrameTask, ComTask, LowAccelerationTask
 import meshcat_shapes
 import binding
 import utils
+
+
 MIN_HEIGHT_THRESHOLD = 0.02
 
 smpl_body_names = [
@@ -129,63 +131,56 @@ def blend_motion(array, skip):
     array = array.reshape((int(array.shape[0] / skip), skip, -1))
     return np.mean(array, axis=1)
 
-def add_object(robot, human, object_name, object_urdf, object_package_dirs):  #实现连接的主要逻辑
-    # Load new object model
-    new_object = pin.RobotWrapper.BuildFromURDF(filename=object_urdf, package_dirs=[object_package_dirs],
-                                                root_joint=pin.JointModelFreeFlyer())
-    
-    # Set initial configuration for the new object (at the same position as robot's base)
-    new_object.q = np.zeros(new_object.model.nq)
-    new_object.data = pin.Data(new_object.model)
+def add_object(given_robot, frame_in_robot, object_urdf, object_package_dirs):
+    # 从 URDF 加载新物体
+    new_object = pin.RobotWrapper.BuildFromURDF(
+        filename=object_urdf,
+        package_dirs=[object_package_dirs],
+        root_joint=pin.JointModelFreeFlyer()
+    )
 
+    # 获取位姿并计算相对变换矩阵 aMb
+    T_B_world = new_object.data.oMf[0]
+    T_A_world = given_robot.data.oMi[0]
+    aMb = T_B_world * T_A_world.inverse()
 
+    print("aMb:", aMb)
+    print("Number of joints in new_object:", new_object.model.nq)
 
+    # 重命名新物体的关节和帧名以避免冲突
+    for i in range(new_object.model.njoints):
+        new_object.model.names[i] = f"obj_{new_object.model.names[i]}"
+    for i in range(len(new_object.model.frames)):
+        new_object.model.frames[i].name = f"obj_{new_object.model.frames[i].name}"
 
+    # 合并dynamic model（机器人 + 新物体）
+    given_robot.model = pin.appendModel(
+        modelA=given_robot.model,
+        modelB=new_object.model,
+        frame_in_modelA=frame_in_robot,
+        aMb=aMb
+    )
 
-    # 获取 "root_joint" 帧的索引
-    frame_id = robot.model.getFrameId("root_joint")
+    # 手动将新物体的Geometry Model添加到主机器人模型中
+    for geom in new_object.collision_model.geometryObjects:
+        given_robot.collision_model.addGeometryObject(geom)
+    for geom in new_object.visual_model.geometryObjects:
+        given_robot.visual_model.addGeometryObject(geom)
 
-    # 调用 framePlacement 并传入正确的参数
-    T_robot_base = robot.framePlacement(robot.q0, frame_id)
+    # 打印合并后的Geometry Model内容
+    print("Collision Model Geometry Objects (after adding):")
+    for i, geom in enumerate(given_robot.collision_model.geometryObjects):
+        print(f"  {i}: {geom.name}, parent_joint={geom.parentJoint}")
 
+    print("Visual Model Geometry Objects (after adding):")
+    for i, geom in enumerate(given_robot.visual_model.geometryObjects):
+        print(f"  {i}: {geom.name}, parent_joint={geom.parentJoint}")
 
-    # 设置 new_object 的 base 姿态    
-    pin.updateFramePlacement(new_object.model, new_object.data, frame_id) # 不知道是否能这样用
-    pin.forwardKinematics(new_object.model, new_object.data, new_object.q0)
+    # 修正 q0 的长度
+    if len(given_robot.q0) != given_robot.model.nq:
+        given_robot.q0 = np.zeros(given_robot.model.nq)
 
-
-    # # 把object放到base位置       验证过，这个没有用
-    # new_object.data.oMf[0] = T_robot_base 
-    # new_object.data.oMi[0] = T_robot_base
-
-
-
-    
-    # Visualize the new object  不需要单独做一个可视化
-    # if not args.headless:
-        
-
-    # 创建 robot_2 的可视化
-    object_viz = MeshcatVisualizer(new_object.model, new_object.collision_model, new_object.visual_model)
-    object_viz.initViewer(open=True)
-    object_viz.loadViewerModel()
-        
-        
-
-        
-    # # 试图加载 new_object 的视觉模型到同一个 viewer 中
-    # new_object_viz = MeshcatVisualizer(
-    #     new_object.model, new_object.collision_model, new_object.visual_model
-    # )
-    # new_object_viz.initViewer(open=False)  # 不重新打开窗口
-    # new_object_viz.loadViewerModel() 
-
-
-
-
-
-
-
+    return given_robot
 
 
 if __name__ == "__main__":
@@ -211,7 +206,20 @@ if __name__ == "__main__":
     
     
     
-
+    # 看看有什么frames
+    print("numbers of frames is", robot.model.nframes)
+    print("names of frames is", [frame.name for frame in robot.model.frames])
+    
+    # 固定到哪个frame上
+    # robot_frame_id = robot.model.getFrameId("")
+    robot_frame_id = 0
+    
+    
+    # Add object (e.g., chair),这个object可以成为一个free-flyer
+    object_name = "ball"
+    object_urdf = "/home/wubinghuan/projects/Retarget-devel/Humanoid-Retarget-devel/robot/Ball/Ball.urdf"
+    object_package_dirs = "/home/wubinghuan/projects/Retarget-devel/Humanoid-Retarget-devel/robot/Ball"
+    robot = add_object(robot, robot_frame_id, object_urdf,object_package_dirs)
 
     # 创建 robot_1 的可视化
     robot_viz = MeshcatVisualizer(robot.model, robot.collision_model, robot.visual_model)
@@ -220,29 +228,32 @@ if __name__ == "__main__":
     
     # 火柴人的可视化
     human_viz = MeshcatVisualizer(human.model, human.collision_model, human.visual_model)
-    robot.setVisualizer(human_viz, init=False);human_viz.initViewer(open=True);human_viz.loadViewerModel()
+    robot.setVisualizer(human_viz, init=False)
+    human_viz.initViewer(open=True)
+    human_viz.loadViewerModel()
     
 
 
 
-
-
-    # Add object (e.g., chair),这个object可以成为一个free-flyer
-    object_name = "ball"
-    object_urdf = "/home/wubinghuan/projects/Retarget-devel/Humanoid-Retarget-devel/robot/Ball/Ball.urdf"
-    object_package_dirs = "/home/wubinghuan/projects/Retarget-devel/Humanoid-Retarget-devel/robot/Ball"
-    add_object(robot, human, object_name, object_urdf,object_package_dirs)
-    
-    
-    
-    
-    
-    
-    
-    
     # Initialize configuration
-    config = pink.Configuration(robot.model, robot.data, robot.q0, collision_model=robot.collision_model)
+    robot.data = pin.Data(robot.model)
+    print("after data-update, data is ",robot.data)
+    config = pink.Configuration(model = robot.model,
+                                data = robot.data,
+                                q = robot.q0,
+                                collision_model=None,
+                                collision_data=None)
     link_names = [frame.name for frame in robot.model.frames if frame.type == BODY]
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     # 加载 YAML 配置
     yaml_dict = yaml.load(open(args.yaml, "r", encoding="utf-8"), Loader=yaml.FullLoader)  

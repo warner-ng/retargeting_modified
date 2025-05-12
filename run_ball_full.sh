@@ -1,4 +1,4 @@
-python src/1.py \
+python src/1_new.py \
     -path robot/G1 \
     -urdf urdf/g1.urdf \
     -srdf urdf/g1.srdf \
