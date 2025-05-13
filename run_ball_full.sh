@@ -1,4 +1,4 @@
-python src/1_new.py \
+python src/main_add_obj.py \
     -path robot/G1 \
     -urdf urdf/g1.urdf \
     -srdf urdf/g1.srdf \
@@ -7,4 +7,10 @@ python src/1_new.py \
     -smpl smpl \
     -data smpl_data/amass_full_test.pkl \
     -output output/g1_data/full_test \
-    -rate 30 -print_joints
+    -rate 30 \
+    -print_joints \
+    -add_obj \
+    -obj_name ball \
+    -obj_urdf /home/wubinghuan/projects/Retarget-devel/Humanoid-Retarget-devel/robot/Ball/Ball.urdf \
+    -obj_pkg /home/wubinghuan/projects/Retarget-devel/Humanoid-Retarget-devel/robot/Ball \
+    -frame_id universe

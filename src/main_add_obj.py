@@ -153,6 +153,8 @@ def add_object(given_robot, frame_in_robot, object_urdf, object_package_dirs):
     for i in range(len(new_object.model.frames)):
         new_object.model.frames[i].name = f"obj_{new_object.model.frames[i].name}"
 
+    old_nq = given_robot.model.nq
+
     # 合并dynamic model（机器人 + 新物体）
     given_robot.model = pin.appendModel(
         modelA=given_robot.model,
@@ -177,10 +179,18 @@ def add_object(given_robot, frame_in_robot, object_urdf, object_package_dirs):
         print(f"  {i}: {geom.name}, parent_joint={geom.parentJoint}")
 
     # 修正 q0 的长度
+    print("given_robot.q0 is ",given_robot.q0)
+    print("given_robot.model.nq is ",given_robot.model.nq)
     if len(given_robot.q0) != given_robot.model.nq:
-        given_robot.q0 = np.zeros(given_robot.model.nq)
-
-    return given_robot
+        given_robot.q0 = np.pad(given_robot.q0, (0, given_robot.model.nq - len(given_robot.q0)), 'constant')
+    print("now, given_robot.q0 is ",given_robot.q0)    
+        
+    robot_q0 = given_robot.q0[:old_nq]
+    object_q0 = given_robot.q0[old_nq:]
+    
+    import ipdb
+    ipdb.set_trace()  # 这里设置断点
+    return given_robot, robot_q0, object_q0
 
 
 if __name__ == "__main__":
@@ -196,6 +206,13 @@ if __name__ == "__main__":
     parser.add_argument("-output", type=str, help="output directory and file name", required=True)
     parser.add_argument("-headless", help="start without rendering", action="store_true")
     parser.add_argument("-print_joints", help="print joint indices and names", action="store_true")
+
+     # 新增的对象相关参数
+    parser.add_argument("-add_obj", help="whether to add object", action="store_true")
+    parser.add_argument("-obj_name", type=str, help="object name")
+    parser.add_argument("-obj_urdf", type=str, help="object urdf file path")
+    parser.add_argument("-obj_pkg", type=str, help="object package directory")
+    parser.add_argument("-frame_id", type=str, help="robot frame id")
     args = parser.parse_args()
     
     # Load SMPL model & robot URDF
@@ -204,24 +221,18 @@ if __name__ == "__main__":
     robot = pin.RobotWrapper.BuildFromURDF(filename=urdf_path, package_dirs=[args.pkg], root_joint=pin.JointModelFreeFlyer())
     human = build_human_wrapper(args.smpl, root_joint=pin.JointModelFreeFlyer())
     
-    
-    
     # 看看有什么frames
     print("numbers of frames is", robot.model.nframes)
     print("names of frames is", [frame.name for frame in robot.model.frames])
     
     # 固定到哪个frame上
-    # robot_frame_id = robot.model.getFrameId("")
-    robot_frame_id = 0
-    
-    
-    # Add object (e.g., chair),这个object可以成为一个free-flyer
-    object_name = "ball"
-    object_urdf = "/home/wubinghuan/projects/Retarget-devel/Humanoid-Retarget-devel/robot/Ball/Ball.urdf"
-    object_package_dirs = "/home/wubinghuan/projects/Retarget-devel/Humanoid-Retarget-devel/robot/Ball"
-    robot = add_object(robot, robot_frame_id, object_urdf,object_package_dirs)
+    robot_frame_id = robot.model.getFrameId(args.frame_id)
 
-    # 创建 robot_1 的可视化
+    # Add object (e.g. ball)
+    if args.add_obj:
+        robot, robot_q0, object_q0 = add_object(robot, robot_frame_id, args.obj_urdf,args.obj_pkg)
+
+    # 创建 robot 的可视化
     robot_viz = MeshcatVisualizer(robot.model, robot.collision_model, robot.visual_model)
     robot_viz.initViewer(open=True)
     robot_viz.loadViewerModel()
@@ -233,8 +244,6 @@ if __name__ == "__main__":
     human_viz.loadViewerModel()
     
 
-
-
     # Initialize configuration
     robot.data = pin.Data(robot.model)
     print("after data-update, data is ",robot.data)
@@ -245,16 +254,7 @@ if __name__ == "__main__":
                                 collision_data=None)
     link_names = [frame.name for frame in robot.model.frames if frame.type == BODY]
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     # 加载 YAML 配置
     yaml_dict = yaml.load(open(args.yaml, "r", encoding="utf-8"), Loader=yaml.FullLoader)  
     
@@ -369,6 +369,10 @@ if __name__ == "__main__":
         # Initialize height
         rate = RateLimiter(frequency=args.rate)
         for t in range(smpl_transforms.shape[0]):
+            print("robot_q0 is", robot_q0)
+            print("object_q0 is ", object_q0)
+            import ipdb; ipdb.set_trace()
+            
             root_name = yaml_dict["Root"]
             root_id = get_smpl_id(root_name)
             root_transform = smpl_transforms[t, root_id]
