@@ -186,9 +186,12 @@ def add_object(given_robot, frame_in_robot, object_urdf, object_package_dirs):
     # 分别找到robot和object的state
     robot.data = pin.Data(robot.model)
     print("after data-update, data is ",robot.data)
- 
-    import ipdb; ipdb.set_trace()
     
+    # data切片的方法：无法直接把Data这个类切成robot和object的，但是可以这样做：
+    # 假如需要获得robot.data.v，那么对比原来未合并前的robot.data.v的长度，然后切片就可以了
+    # object.data.v则是对应切片后面的那一截
+    # 其他以此类推
+
     return given_robot
 
 
