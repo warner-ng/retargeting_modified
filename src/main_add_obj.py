@@ -153,8 +153,6 @@ def add_object(given_robot, frame_in_robot, object_urdf, object_package_dirs):
     for i in range(len(new_object.model.frames)):
         new_object.model.frames[i].name = f"obj_{new_object.model.frames[i].name}"
 
-    old_nq = given_robot.model.nq
-
     # 合并dynamic model（机器人 + 新物体）
     given_robot.model = pin.appendModel(
         modelA=given_robot.model,
@@ -186,20 +184,12 @@ def add_object(given_robot, frame_in_robot, object_urdf, object_package_dirs):
     print("now, given_robot.q0 is ",given_robot.q0)    
         
     # 分别找到robot和object的state
-    # given_robot.data.q    
-
-    
-
     robot.data = pin.Data(robot.model)
     print("after data-update, data is ",robot.data)
-    
+ 
     import ipdb; ipdb.set_trace()
     
-    robot_q = robot.data[:old_nq]
-    object_q = robot.data[old_nq:]
-    
-    
-    return given_robot, robot_q, object_q
+    return given_robot
 
 
 if __name__ == "__main__":
