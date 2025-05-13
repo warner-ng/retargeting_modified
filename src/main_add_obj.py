@@ -185,12 +185,21 @@ def add_object(given_robot, frame_in_robot, object_urdf, object_package_dirs):
         given_robot.q0 = np.pad(given_robot.q0, (0, given_robot.model.nq - len(given_robot.q0)), 'constant')
     print("now, given_robot.q0 is ",given_robot.q0)    
         
-    robot_q0 = given_robot.q0[:old_nq]
-    object_q0 = given_robot.q0[old_nq:]
+    # 分别找到robot和object的state
+    # given_robot.data.q    
+
     
-    import ipdb
-    ipdb.set_trace()  # 这里设置断点
-    return given_robot, robot_q0, object_q0
+
+    robot.data = pin.Data(robot.model)
+    print("after data-update, data is ",robot.data)
+    
+    import ipdb; ipdb.set_trace()
+    
+    robot_q = robot.data[:old_nq]
+    object_q = robot.data[old_nq:]
+    
+    
+    return given_robot, robot_q, object_q
 
 
 if __name__ == "__main__":
@@ -245,8 +254,7 @@ if __name__ == "__main__":
     
 
     # Initialize configuration
-    robot.data = pin.Data(robot.model)
-    print("after data-update, data is ",robot.data)
+
     config = pink.Configuration(model = robot.model,
                                 data = robot.data,
                                 q = robot.q0,
@@ -369,9 +377,7 @@ if __name__ == "__main__":
         # Initialize height
         rate = RateLimiter(frequency=args.rate)
         for t in range(smpl_transforms.shape[0]):
-            print("robot_q0 is", robot_q0)
-            print("object_q0 is ", object_q0)
-            import ipdb; ipdb.set_trace()
+
             
             root_name = yaml_dict["Root"]
             root_id = get_smpl_id(root_name)
