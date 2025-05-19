@@ -13,4 +13,4 @@ python src/main_add_obj.py \
     -obj_name ball \
     -obj_urdf /home/wubinghuan/projects/Retarget-devel/Humanoid-Retarget-devel/robot/Ball/Ball.urdf \
     -obj_pkg /home/wubinghuan/projects/Retarget-devel/Humanoid-Retarget-devel/robot/Ball \
-    -frame_id universe
+    -frame_id head_link

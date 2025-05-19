@@ -139,7 +139,7 @@ def add_object(given_robot, frame_in_robot, object_urdf, object_package_dirs):
         root_joint=pin.JointModelFreeFlyer()
     )
 
-    # 获取位姿并计算相对变换矩阵 aMb
+    # 获取位姿并计算相对变换矩阵 aMb  (注意：这个才是你的球放在哪个位置的接口，而不是frame_id,实验得出的)
     T_B_world = new_object.data.oMf[0]
     T_A_world = given_robot.data.oMi[0]
     aMb = T_B_world * T_A_world.inverse()
@@ -232,7 +232,7 @@ if __name__ == "__main__":
 
     # Add object (e.g. ball)
     if args.add_obj:
-        robot, robot_q0, object_q0 = add_object(robot, robot_frame_id, args.obj_urdf,args.obj_pkg)
+        robot = add_object(robot, robot_frame_id, args.obj_urdf,args.obj_pkg)
 
     # 创建 robot 的可视化
     robot_viz = MeshcatVisualizer(robot.model, robot.collision_model, robot.visual_model)
